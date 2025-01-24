@@ -182,7 +182,7 @@ const StarfieldBackground = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="fixed inset-0 -z-10 h-full w-full blur-[2px]" />;
+  return <canvas ref={canvasRef} className="fixed inset-0 -z-10 h-full max-w-[100vw] blur-[2px]" />;
 };
 
 export default StarfieldBackground;
