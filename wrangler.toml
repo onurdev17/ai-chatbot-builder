@@ -1,0 +1,9 @@
+name = "chat-bot"
+main = "src/index.ts"
+compatibility_date = "2025-01-23"
+
+[ai]
+binding = "AI"
+
+[vars]
+CLOUDFLARE_ACCOUNT_ID = c07a509439b6609871d2d8f7a65924a6

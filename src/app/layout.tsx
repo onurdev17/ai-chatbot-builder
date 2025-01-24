@@ -1,16 +1,16 @@
+import { DialogProvider } from "@/context/DialogContext";
+import { QuestionProvider } from "@/context/QuestionContext";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Starfield from "@/components/Bg";
+import Footer from "@/components/Footer";
+import { Exo_2 } from "next/font/google";
+import WalletCode from "@/components/WalletCode";
+import Logo from "@/components/Logo";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const exo = Exo_2({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,10 +24,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/logo-icon.png" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`flex min-h-screen flex-col justify-center gap-24 text-sm antialiased ${exo.className}`}
       >
-        {children}
+        <DialogProvider>
+          <QuestionProvider>
+            <Navbar />
+            <div className="absolute left-[7.5%] top-6 h-28 w-28 xl:left-[20%]">
+              <Logo />
+            </div>
+            <main className="flex min-h-screen flex-col px-4">{children}</main>
+            <Footer />
+            <Starfield />
+            <WalletCode address="43sdfs432t" />
+          </QuestionProvider>
+        </DialogProvider>
+        <NextTopLoader showSpinner={false} easing="ease" />
       </body>
     </html>
   );
