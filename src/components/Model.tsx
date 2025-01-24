@@ -91,7 +91,7 @@ function Model() {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="mx-auto w-[70rem] px-1 sm:px-2 lg:px-4"
+      className="mx-auto w-[70rem] px-1 pt-20 sm:px-2 lg:px-4"
     >
       <div className="relative">
         <MessageBubble
