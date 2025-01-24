@@ -3,17 +3,15 @@
 import React, { createContext, useState, useContext } from "react";
 
 const questions = [
-  { id: 1, question: "Let’s start with a name. What should we call your chatbot?", sum: "name" },
+  { id: 1, question: "Let’s name your chatbot. What should it be?", sum: "name" },
   {
     id: 2,
-    question:
-      "What is the primary purpose of your chatbot? To put it differently, what specific problem is it designed to solve, or what kind of experience should it provide to users?",
+    question: "What is the primary purpose of your chatbot?",
     sum: "purpose",
   },
   {
     id: 3,
-    question:
-      "What is the intended scope of your chatbot? In other words, what specific topics or tasks should it be able to handle?",
+    question: "What is the intended scope of your chatbot?",
     sum: "scope",
   },
   {

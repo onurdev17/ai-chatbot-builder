@@ -1,14 +1,14 @@
+import Starfield from "@/components/Bg";
+import Footer from "@/components/Footer";
+import Logo from "@/components/Logo";
+import Navbar from "@/components/Navbar";
+import Socials from "@/components/Socials";
 import { DialogProvider } from "@/context/DialogContext";
 import { QuestionProvider } from "@/context/QuestionContext";
 import type { Metadata } from "next";
+import { Exo_2 } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Starfield from "@/components/Bg";
-import Footer from "@/components/Footer";
-import { Exo_2 } from "next/font/google";
-import WalletCode from "@/components/WalletCode";
-import Logo from "@/components/Logo";
 
 const exo = Exo_2({ subsets: ["latin"] });
 
@@ -33,13 +33,13 @@ export default function RootLayout({
         <DialogProvider>
           <QuestionProvider>
             <Navbar />
-            <div className="absolute left-[7.5%] top-6 h-28 w-28 xl:left-[20%]">
+            <div className="absolute left-[50%] top-6 h-40 w-40 -translate-x-1/2 transform sm:left-[12.5%] sm:h-28 sm:w-28 xl:left-[20%]">
               <Logo />
             </div>
             <main className="flex min-h-screen flex-col px-4">{children}</main>
             <Footer />
             <Starfield />
-            <WalletCode address="43sdfs432t" />
+            <Socials />
           </QuestionProvider>
         </DialogProvider>
         <NextTopLoader showSpinner={false} easing="ease" />
