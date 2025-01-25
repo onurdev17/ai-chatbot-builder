@@ -4,7 +4,7 @@ import { Copy, Check, Wallet } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const WalletCode = ({ address }: { address: string }) => {
+const NavbarSocials = ({ address }: { address: string }) => {
   const [isCopied, setIsCopied] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const shortAddress = `${address.slice(0, 4)}...${address.slice(-4)}`;
@@ -69,4 +69,4 @@ const WalletCode = ({ address }: { address: string }) => {
   );
 };
 
-export default WalletCode;
+export default NavbarSocials;

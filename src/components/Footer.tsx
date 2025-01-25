@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { FiCode, FiTwitter } from "react-icons/fi";
 import { PiTelegramLogo } from "react-icons/pi";
@@ -15,6 +15,23 @@ export default function Footer() {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+
+  const CopyNotification = () => (
+    <AnimatePresence>
+      {copied && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          className="fixed bottom-8 left-1/2 z-[999] -translate-x-1/2"
+        >
+          <div className="rounded-lg bg-gray-800/90 px-4 py-2.5 text-sm ring-1 ring-gray-700/80 backdrop-blur-lg">
+            ✅ Contract address copied!
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
 
   return (
     <motion.footer
@@ -93,27 +110,19 @@ export default function Footer() {
               onClick={copyToClipboard}
             >
               <RiMoneyDollarCircleLine className="text-xl" />
-              <span className="relative">
-                Contract Address
-                <span
-                  className={`absolute -bottom-6 left-0 rounded bg-gray-800 px-2 py-1 text-xs transition-opacity ${
-                    copied ? "opacity-100" : "opacity-0"
-                  }`}
-                >
-                  {copied ? "Copied to clipboard!" : "Click to copy"}
-                </span>
-              </span>
+              <span>Contract Address</span>
             </motion.div>
           </div>
-        </div>
 
-        {/* Copyright */}
-        <div className="mt-8 border-t border-white/5 pt-6 text-center">
-          <p className="text-sm text-slate-400">
-            © {new Date().getFullYear()} Nimblic. All rights reserved.
-          </p>
+          <div className="mt-8 border-t border-white/5 pt-6 text-center">
+            <p className="text-sm text-slate-400">
+              © {new Date().getFullYear()} Nimblic. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
+
+      <CopyNotification />
     </motion.footer>
   );
 }
