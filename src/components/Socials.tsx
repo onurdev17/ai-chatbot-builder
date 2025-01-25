@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, memo } from "react";
+import React, { useState, useEffect, useCallback, memo } from "react";
 import { FiTwitter } from "react-icons/fi";
 import { PiTelegramLogo, PiX } from "react-icons/pi";
 import { IoIosMenu } from "react-icons/io";
