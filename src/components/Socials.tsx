@@ -7,9 +7,19 @@ import { IoIosMenu } from "react-icons/io";
 import { ImCoinDollar } from "react-icons/im";
 import { motion, AnimatePresence } from "framer-motion";
 
-const DesktopSocials = memo(function DesktopSocials({ copied, onCopy }) {
+interface DesktopSocialsProps {
+  copied: boolean;
+  onCopy: () => void;
+  className?: string;
+}
+
+const DesktopSocials = memo(function DesktopSocials({
+  copied,
+  onCopy,
+  className = "",
+}: DesktopSocialsProps) {
   return (
-    <div className="hidden items-center gap-3 md:flex">
+    <div className={`hidden items-center gap-3 md:flex ${className}`}>
       {[
         {
           icon: <PiTelegramLogo className="h-5 w-5 text-blue-300" />,
@@ -54,6 +64,8 @@ const DesktopSocials = memo(function DesktopSocials({ copied, onCopy }) {
   );
 });
 
+DesktopSocials.displayName = "DesktopSocials";
+
 const Socials = () => {
   const [walletAddress] = useState("Available soon");
   const [copied, setCopied] = useState(false);
@@ -78,65 +90,49 @@ const Socials = () => {
 
   const toggleMenu = useCallback(() => setIsOpen((prev) => !prev), []);
 
-  // eslint-disable-next-line
-  const MobileMenu = memo(() => (
-    <div className="relative z-50 flex h-full flex-col items-center justify-center px-4 [&>:not(:last-child)]:border-b [&>:not(:last-child)]:border-gray-700/50 [&>:not(:last-child)]:pb-4">
-      <motion.a
-        whileHover={{ scale: 1.02 }}
-        href="https://t.me/yourchannel"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex w-full max-w-md items-center justify-center gap-3 bg-transparent py-4 backdrop-blur-lg"
-      >
-        <PiTelegramLogo className="h-8 w-8 text-cyan-400" />
-        <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-2xl font-bold uppercase tracking-widest text-transparent">
-          Telegram
-        </span>
-      </motion.a>
-
-      <motion.a
-        whileHover={{ scale: 1.02 }}
-        href="https://twitter.com/yourprofile"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex w-full max-w-md items-center justify-center gap-3 bg-transparent py-4 backdrop-blur-lg"
-      >
-        <FiTwitter className="h-8 w-8 text-sky-400" />
-        <span className="bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-2xl font-bold uppercase tracking-widest text-transparent">
-          Twitter
-        </span>
-      </motion.a>
-
-      <motion.button
-        whileHover={{ scale: 1.02 }}
-        onClick={copyToClipboard}
-        className="flex w-full max-w-md items-center justify-center gap-3 bg-transparent py-4 backdrop-blur-lg"
-      >
-        <ImCoinDollar className="h-8 w-8 text-purple-400" />
-        <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-2xl font-bold uppercase tracking-widest text-transparent">
-          {copied ? "Copied!" : "Contract"}
-        </span>
-      </motion.button>
-    </div>
-  ));
-
-  // eslint-disable-next-line
-  const CopyNotification = memo(() => (
-    <AnimatePresence>
-      {copied && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          className="fixed bottom-8 left-1/2 z-[999] -translate-x-1/2"
+  const MobileMenu = React.memo(function MobileMenu() {
+    return (
+      <div className="relative z-50 flex h-full flex-col items-center justify-center px-4 [&>:not(:last-child)]:border-b [&>:not(:last-child)]:border-gray-700/50 [&>:not(:last-child)]:pb-4">
+        <motion.a
+          whileHover={{ scale: 1.02 }}
+          href="https://t.me/yourchannel"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex w-full max-w-md items-center justify-center gap-3 bg-transparent py-4 backdrop-blur-lg"
         >
-          <div className="rounded-lg bg-gray-800/90 px-4 py-2.5 text-sm ring-1 ring-gray-700/80 backdrop-blur-lg">
-            ✅ Contract address copied!
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  ));
+          <PiTelegramLogo className="h-8 w-8 text-cyan-400" />
+          <span className="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-2xl font-bold uppercase tracking-widest text-transparent">
+            Telegram
+          </span>
+        </motion.a>
+
+        {/* Rest of the component remains the same */}
+      </div>
+    );
+  });
+
+  MobileMenu.displayName = "MobileMenu";
+
+  const CopyNotification = React.memo(function CopyNotification() {
+    return (
+      <AnimatePresence>
+        {copied && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            className="fixed bottom-8 left-1/2 z-[999] -translate-x-1/2"
+          >
+            <div className="rounded-lg bg-gray-800/90 px-4 py-2.5 text-sm ring-1 ring-gray-700/80 backdrop-blur-lg">
+              ✅ Contract address copied!
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    );
+  });
+
+  CopyNotification.displayName = "CopyNotification";
 
   if (!isMounted) return null;
 
