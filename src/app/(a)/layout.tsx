@@ -34,7 +34,7 @@ export default function RootLayout({
         <DialogProvider>
           <QuestionProvider>
             <Navbar />
-            <div className="absolute left-[50%] top-6 h-40 w-40 -translate-x-1/2 transform sm:left-[12.5%] sm:h-28 sm:w-28 xl:left-[20%]">
+            <div className="absolute left-[15%] top-6 h-20 w-20 -translate-x-1/2 transform sm:left-[12.5%] sm:h-28 sm:w-28 xl:left-[20%]">
               <Logo />
             </div>
             <main className="max-w-screen flex h-[55%] flex-col sm:min-h-screen">{children}</main>

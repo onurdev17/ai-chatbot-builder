@@ -1,14 +1,14 @@
 "use client";
-import React from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import CopyableIdentifier from "./CopyableIdentifier";
 import Heading from "./Heading";
 import TypographyMuted from "./MutedText";
 import { Button } from "./ui/button";
-import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <div className="flex h-[60vh] flex-col items-center justify-end px-4">
+    <div className="sm:h[60vh] flex h-[75vh] flex-col items-center justify-end px-4">
       <div className="relative z-10 flex flex-col items-center space-y-8">
         {/* Title with subtle shadow */}
         <motion.div
@@ -55,6 +55,9 @@ export default function Hero() {
               {/* <div className="absolute inset-0 -left-full h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all group-hover:left-full" /> */}
             </Link>
           </Button>
+          <div className="mx-auto mt-4 text-center">
+            <CopyableIdentifier />
+          </div>
         </motion.div>
 
         {/* Animated dots pattern */}

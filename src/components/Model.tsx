@@ -76,9 +76,11 @@ function Model() {
 
   useEffect(() => {
     setCurrentQId(1);
-    document.documentElement.style.overflow = "hidden"; // Mobilde scroll'u engelle
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
     return () => {
       document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
     };
   }, []);
 
