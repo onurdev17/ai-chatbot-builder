@@ -5,7 +5,7 @@ import img from "/public/safari-section.png";
 
 export default function Home() {
   return (
-    <div className="flex w-full flex-col justify-center gap-10">
+    <div className="flex flex-col justify-center gap-10">
       <Hero />
       <Safari imageSrc={img.src} />
       <FutureFeatures />

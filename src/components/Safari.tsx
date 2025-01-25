@@ -9,7 +9,10 @@ function Safari({ imageSrc }: { imageSrc: string }) {
   const rotateX = useTransform(scrollY, [0, 600], [50, 0], { clamp: true });
 
   return (
-    <section ref={containerRef} className="mt-32 h-[65vh] w-full py-20 sm:h-[100vh]">
+    <section
+      ref={containerRef}
+      className="mt-32 h-[65vh] w-full overflow-hidden py-20 sm:h-[100vh]"
+    >
       <motion.div
         initial={{ opacity: 0, bottom: -200 }}
         animate={{ opacity: 1, bottom: 0 }}
@@ -19,7 +22,7 @@ function Safari({ imageSrc }: { imageSrc: string }) {
           transformPerspective: 1000,
           transformOrigin: "top center",
         }}
-        className="relative mx-auto w-[70%] sm:max-w-[710px]"
+        className="relative mx-auto w-[60%] sm:max-w-[710px]"
       >
         {/* Cihaz Çerçevesi */}
         <div className="absolute inset-0 z-20">

@@ -28,7 +28,7 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/logo-icon.png" />
       </head>
       <body
-        className={`flex min-h-screen flex-col justify-center gap-24 text-sm antialiased ${exo.className}`}
+        className={`max-w-screen flex min-h-screen flex-col justify-center gap-24 text-sm antialiased ${exo.className}`}
       >
         <DialogProvider>
           <QuestionProvider>
@@ -36,7 +36,7 @@ export default function RootLayout({
             <div className="absolute left-[50%] top-6 h-40 w-40 -translate-x-1/2 transform sm:left-[12.5%] sm:h-28 sm:w-28 xl:left-[20%]">
               <Logo />
             </div>
-            <main className="flex h-[55%] w-screen flex-col px-4 sm:min-h-screen">{children}</main>
+            <main className="max-w-screen flex h-[55%] flex-col sm:min-h-screen">{children}</main>
             <Footer />
             <Starfield />
             <Socials />
