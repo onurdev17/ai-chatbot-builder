@@ -8,7 +8,7 @@ import { QuestionProvider } from "@/context/QuestionContext";
 import type { Metadata } from "next";
 import { Exo_2 } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
-import "./globals.css";
+import "@/app/global.css";
 
 const exo = Exo_2({ subsets: ["latin"] });
 
@@ -36,7 +36,7 @@ export default function RootLayout({
             <div className="absolute left-[50%] top-6 h-40 w-40 -translate-x-1/2 transform sm:left-[12.5%] sm:h-28 sm:w-28 xl:left-[20%]">
               <Logo />
             </div>
-            <main className="flex min-h-screen flex-col px-4">{children}</main>
+            <main className="flex h-[55%] w-screen flex-col px-4 sm:min-h-screen">{children}</main>
             <Footer />
             <Starfield />
             <Socials />

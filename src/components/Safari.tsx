@@ -19,7 +19,7 @@ function Safari({ imageSrc }: { imageSrc: string }) {
           transformPerspective: 1000,
           transformOrigin: "top center",
         }}
-        className="relative mx-auto w-[80%] sm:max-w-[710px]"
+        className="relative mx-auto w-[70%] sm:max-w-[710px]"
       >
         {/* Cihaz Çerçevesi */}
         <div className="absolute inset-0 z-20">

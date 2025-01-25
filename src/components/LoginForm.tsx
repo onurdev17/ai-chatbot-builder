@@ -12,25 +12,18 @@ export default function LoginForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Her durumda hata göster
     setError("Invalid credentials - Nimblic authentication failed");
-    setTimeout(() => setError(null), 3000); // 3 saniye sonra hata mesajını kaldır
+    setTimeout(() => setError(null), 3000);
   };
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden p-4">
-      {/* <div className="animate-float animation-delay-3000 absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-purple-500/10 blur-3xl" /> */}
-      {/* <div className="animate-float absolute -left-20 -top-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl" /> */}
-      {/* Orijinal arkaplan efektleri */}
-
-      {/* Orijinal form konteynırı */}
+    <div className="relative flex h-[60vh] items-end justify-center overflow-hidden p-4 sm:min-h-screen sm:items-center">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 w-full max-w-md rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-slate-900/50 to-black/50 p-8 shadow-2xl shadow-cyan-500/20 backdrop-blur-2xl"
+        className="relative z-10 w-full max-w-md rounded-xl border-0 p-6 sm:rounded-2xl sm:border sm:border-cyan-500/30 sm:bg-gradient-to-br sm:from-slate-900/50 sm:to-black/50 sm:shadow-2xl sm:shadow-cyan-500/20 sm:backdrop-blur-2xl"
       >
-        {/* Hata mesajı (orijinal tasarım ile uyumlu) */}
         {error && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -41,14 +34,13 @@ export default function LoginForm() {
           </motion.div>
         )}
 
-        {/* Orijinal logo/header */}
-        <div className="mb-12 flex flex-col items-center">
+        {/* Logo'yu mobile'da gizle */}
+        <div className="mb-12 hidden flex-col items-center max-sm:mb-8 sm:flex">
           <div className="relative mb-4 h-24 w-24">
             <Logo />
           </div>
         </div>
 
-        {/* Orijinal form elemanları */}
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Email Input */}
           <div className="group relative">
@@ -61,7 +53,7 @@ export default function LoginForm() {
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
-                  setError(null); // Hata mesajını temizle
+                  setError(null);
                 }}
                 className="w-full bg-transparent px-4 py-3 text-cyan-100 placeholder-cyan-400/50 focus:outline-none"
               />
@@ -79,7 +71,7 @@ export default function LoginForm() {
                 value={password}
                 onChange={(e) => {
                   setPassword(e.target.value);
-                  setError(null); // Hata mesajını temizle
+                  setError(null);
                 }}
                 className="w-full bg-transparent px-4 py-3 text-cyan-100 placeholder-cyan-400/50 focus:outline-none"
               />
@@ -94,17 +86,6 @@ export default function LoginForm() {
             Sign in
           </motion.button>
         </form>
-
-        {/* Orijinal ekstra bağlantılar
-        <div className="mt-6 flex justify-center space-x-4 text-sm">
-          <a href="#" className="text-cyan-400/80 hover:text-cyan-300">
-            Quantum Recovery
-          </a>
-          <span className="text-cyan-400/40">•</span>
-          <a href="#" className="text-cyan-400/80 hover:text-cyan-300">
-            Create NeuroAccount
-          </a>
-        </div> */}
       </motion.div>
     </div>
   );
