@@ -26,6 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" type="image/svg+xml" href="/logo-icon.png" />
+        <title>Nimblic</title>
       </head>
       <body
         className={`max-w-screen flex min-h-screen flex-col justify-center gap-24 text-sm antialiased ${exo.className}`}

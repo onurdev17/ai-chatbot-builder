@@ -17,9 +17,9 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <Heading className="text-center text-5xl font-bold text-white drop-shadow-2xl md:text-6xl">
-            Your AI Companion
+            AI Powered Custom
             <span className="block h-14 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Reimagined
+              Chatbot
             </span>
           </Heading>
         </motion.div>
