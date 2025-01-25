@@ -15,7 +15,7 @@ function Safari() {
   return (
     <section
       ref={containerRef}
-      className="mt-32 h-[110vh] w-full overflow-hidden py-20 sm:h-[100vh]"
+      className="mt-32 h-[125vh] w-full overflow-hidden py-20 sm:h-[100vh]"
     >
       {/* Desktop Version */}
       <motion.div
