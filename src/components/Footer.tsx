@@ -25,7 +25,7 @@ export default function Footer() {
           exit={{ opacity: 0, y: 20 }}
           className="fixed bottom-8 left-1/2 z-[999] -translate-x-1/2"
         >
-          <div className="rounded-lg bg-gray-800/90 px-4 py-2.5 text-sm ring-1 ring-gray-700/80 backdrop-blur-lg">
+          <div className="rounded-lg bg-gray-800/90 px-4 py-2.5 text-center text-sm ring-1 ring-gray-700/80 backdrop-blur-lg">
             ✅ Contract address copied!
           </div>
         </motion.div>

@@ -47,6 +47,7 @@ function Model() {
       handleSubmit(updatedConfig);
     }
 
+    // eslint-disable-next-line
     // @ts-ignore
     setCurrentQId((prev) => prev + 1);
     setInputValue("");
@@ -82,6 +83,8 @@ function Model() {
       document.documentElement.style.overflow = "auto";
       document.body.style.overflow = "auto";
     };
+
+    // eslint-disable-next-line
   }, []);
 
   return (

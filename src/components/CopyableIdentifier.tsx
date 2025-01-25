@@ -28,7 +28,7 @@ const CopyableIdentifier = () => {
             className="fixed bottom-8 left-1/2 z-[999] -translate-x-1/2"
           >
             <div className="rounded-lg bg-gray-800/90 px-4 py-2.5 text-sm ring-1 ring-gray-700/80 backdrop-blur-lg">
-              ✅ Identifier copied!
+              ✅ Contract address copied!
             </div>
           </motion.div>
         )}
