@@ -1,38 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, memo } from "react";
 import { FiTwitter } from "react-icons/fi";
 import { PiTelegramLogo, PiX } from "react-icons/pi";
 import { IoIosMenu } from "react-icons/io";
 import { ImCoinDollar } from "react-icons/im";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Socials = () => {
-  const [walletAddress] = useState("0x1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b");
-  const [copied, setCopied] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(walletAddress);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-    setIsOpen(false);
-  };
-
-  const toggleMenu = () => setIsOpen((prev) => !prev);
-
-  // Desktop View Components
-  const DesktopSocials = () => (
+const DesktopSocials = memo(function DesktopSocials({ copied, onCopy }) {
+  return (
     <div className="hidden items-center gap-3 md:flex">
       {[
         {
@@ -43,7 +19,7 @@ const Socials = () => {
           icon: (
             <ImCoinDollar className={`h-5 w-5 ${copied ? "text-green-400" : "text-blue-300"}`} />
           ),
-          action: copyToClipboard,
+          action: onCopy,
         },
         {
           icon: <FiTwitter className="h-5 w-5 text-blue-300" />,
@@ -76,9 +52,34 @@ const Socials = () => {
       ))}
     </div>
   );
+});
 
-  // Mobile View Components
-  const MobileMenu = () => (
+const Socials = () => {
+  const [walletAddress] = useState("Available soon");
+  const [copied, setCopied] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const copyToClipboard = useCallback(() => {
+    navigator.clipboard.writeText(walletAddress);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+    setIsOpen(false);
+  }, [walletAddress]);
+
+  const toggleMenu = useCallback(() => setIsOpen((prev) => !prev), []);
+
+  // eslint-disable-next-line
+  const MobileMenu = memo(() => (
     <div className="relative z-50 flex h-full flex-col items-center justify-center px-4 [&>:not(:last-child)]:border-b [&>:not(:last-child)]:border-gray-700/50 [&>:not(:last-child)]:pb-4">
       <motion.a
         whileHover={{ scale: 1.02 }}
@@ -117,9 +118,10 @@ const Socials = () => {
         </span>
       </motion.button>
     </div>
-  );
+  ));
 
-  const CopyNotification = () => (
+  // eslint-disable-next-line
+  const CopyNotification = memo(() => (
     <AnimatePresence>
       {copied && (
         <motion.div
@@ -134,13 +136,13 @@ const Socials = () => {
         </motion.div>
       )}
     </AnimatePresence>
-  );
+  ));
 
   if (!isMounted) return null;
 
   return (
     <div className={`${isMobile ? "fixed" : "absolute"} right-4 top-4 z-50`}>
-      <DesktopSocials />
+      <DesktopSocials copied={copied} onCopy={copyToClipboard} />
       <CopyNotification />
 
       {isMobile && (

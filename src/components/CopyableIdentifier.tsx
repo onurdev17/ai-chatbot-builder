@@ -4,7 +4,7 @@ import { Copy } from "lucide-react";
 
 const CopyableIdentifier = () => {
   const [copied, setCopied] = useState(false);
-  const identifier = "CA: sad2314dzf3423";
+  const identifier = "CA: Available soon";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(identifier);
