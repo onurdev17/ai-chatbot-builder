@@ -13,7 +13,10 @@ function Safari() {
   const mobileRotateX = useTransform(scrollY, [0, 600], [30, 0], { clamp: true });
 
   return (
-    <section ref={containerRef} className="mt-32 h-[100vh] w-full py-20 sm:h-[100vh]">
+    <section
+      ref={containerRef}
+      className="mt-32 h-[110vh] w-full overflow-hidden py-20 sm:h-[100vh]"
+    >
       {/* Desktop Version */}
       <motion.div
         className="relative mx-auto hidden w-[70%] sm:block sm:max-w-[710px]"
