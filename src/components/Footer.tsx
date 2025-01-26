@@ -78,12 +78,12 @@ export default function Footer() {
                 {
                   icon: <FiTwitter />,
                   label: "Twitter",
-                  href: "https://twitter.com/your_username",
+                  href: "https://twitter.com",
                 },
                 {
                   icon: <PiTelegramLogo />,
                   label: "Telegram",
-                  href: "https://t.me/your_channel_link",
+                  href: "https://t.me",
                 },
               ].map((social) => (
                 <motion.a

@@ -11,13 +11,13 @@ import { motion, AnimatePresence } from "framer-motion";
 const socialItems = [
   {
     icon: <PiTelegramLogo className="h-5 w-5 text-blue-300" />,
-    href: "https://t.me/yourchannel",
+    href: "https://t.me",
     delay: 0.15,
     key: "telegram",
   },
   {
     icon: <FiTwitter className="h-5 w-5 text-blue-300" />,
-    href: "https://twitter.com/yourprofile",
+    href: "https://twitter.com",
     delay: 0.45,
     key: "twitter",
   },
