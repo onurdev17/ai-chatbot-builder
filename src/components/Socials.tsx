@@ -63,9 +63,14 @@ const Socials = () => {
             }}
             whileHover={{ scale: 1.15, y: -3 }}
             whileTap={{ scale: 0.95 }}
-            className="rounded-xl border border-indigo-500/30 bg-gradient-to-r from-blue-500/30 to-purple-500/30 p-2 backdrop-blur-xl transition-all hover:border-indigo-400 hover:ring-1 hover:ring-indigo-400/30"
+            className="relative rounded-xl border border-indigo-500/30 bg-gradient-to-r from-blue-500/30 to-purple-500/30 p-4 backdrop-blur-xl transition-all hover:border-indigo-400 hover:ring-1 hover:ring-indigo-400/30"
           >
-            <a href={item.href} target="_blank" rel="noopener noreferrer">
+            <a
+              className="absolute inset-0 flex items-center justify-center"
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {item.icon}
             </a>
           </motion.div>
@@ -79,9 +84,12 @@ const Socials = () => {
           transition={{ delay: 0.3, type: "spring", stiffness: 100 }}
           whileHover={{ scale: 1.15, y: -3 }}
           whileTap={{ scale: 0.95 }}
-          className="h-[38px] rounded-xl border border-indigo-500/30 bg-gradient-to-r from-blue-500/30 to-purple-500/30 p-2 backdrop-blur-xl transition-all hover:border-indigo-400 hover:ring-1 hover:ring-indigo-400/30"
+          className="relative rounded-xl border border-indigo-500/30 bg-gradient-to-r from-blue-500/30 to-purple-500/30 p-2 p-4 backdrop-blur-xl transition-all hover:border-indigo-400 hover:ring-1 hover:ring-indigo-400/30"
         >
-          <button onClick={copyToClipboard}>
+          <button
+            className="absolute inset-0 flex items-center justify-center"
+            onClick={copyToClipboard}
+          >
             <ImCoinDollar className={`h-5 w-5 ${copied ? "text-green-400" : "text-blue-300"}`} />
           </button>
         </motion.div>
