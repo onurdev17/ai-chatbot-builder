@@ -78,12 +78,12 @@ export default function Footer() {
                 {
                   icon: <FiTwitter />,
                   label: "Twitter",
-                  href: "https://twitter.com",
+                  href: "https://x.com/NimblicAiSol",
                 },
                 {
                   icon: <PiTelegramLogo />,
                   label: "Telegram",
-                  href: "https://t.me",
+                  href: "https://t.me/nimblicai",
                 },
               ].map((social) => (
                 <motion.a

@@ -51,7 +51,6 @@ const FutureFeatures = () => {
   return (
     <section className="relative min-h-[100vh] overflow-hidden pb-5 pt-20">
       {/* Background Elements */}
-      {/* <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-20" /> */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.3 }}

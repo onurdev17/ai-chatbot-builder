@@ -11,13 +11,13 @@ import { motion, AnimatePresence } from "framer-motion";
 const socialItems = [
   {
     icon: <PiTelegramLogo className="h-5 w-5 text-blue-300" />,
-    href: "https://t.me",
+    href: "https://t.me/nimblicai",
     delay: 0.15,
     key: "telegram",
   },
   {
     icon: <FiTwitter className="h-5 w-5 text-blue-300" />,
-    href: "https://twitter.com",
+    href: "https://x.com/NimblicAiSol",
     delay: 0.45,
     key: "twitter",
   },
@@ -128,7 +128,7 @@ const Socials = () => {
                 <div className="relative z-50 flex h-full flex-col items-center justify-center px-4 [&>:not(:last-child)]:border-b [&>:not(:last-child)]:border-gray-700/50 [&>:not(:last-child)]:pb-4">
                   <motion.a
                     whileHover={{ scale: 1.02 }}
-                    href="https://t.me/yourchannel"
+                    href="https://t.me/nimblicai"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex w-full max-w-md items-center justify-center gap-3 bg-transparent py-4 backdrop-blur-lg"
@@ -141,7 +141,7 @@ const Socials = () => {
 
                   <motion.a
                     whileHover={{ scale: 1.02 }}
-                    href="https://twitter.com/yourprofile"
+                    href="https://twitter.com/NimblicAiSol"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex w-full max-w-md items-center justify-center gap-3 bg-transparent py-4 backdrop-blur-lg"
