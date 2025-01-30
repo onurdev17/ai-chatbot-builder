@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Heading from "./Heading";
+import TypographyMuted from "./MutedText";
 
 const DesktopImg = "/desktop-safari.png";
 const MobileImg = "/mobile-safari.png";
@@ -15,8 +17,19 @@ function Safari() {
   return (
     <section
       ref={containerRef}
-      className="mt-32 h-[125vh] w-full overflow-hidden py-20 sm:h-[100vh]"
+      className="mt-32 h-[153dvh] w-full overflow-hidden py-20 sm:h-[115vh]"
     >
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        className="mb-20 text-center"
+      >
+        <Heading variant="secondary">The Future of Conversation</Heading>
+        <TypographyMuted className="text-md relative leading-8 text-gray-300/90 md:text-lg mt-4 px-4">
+          AI-driven chats that feel like real interactions—today and tomorrow.
+        </TypographyMuted>
+      </motion.div>
+
       {/* Desktop Version */}
       <motion.div
         className="relative mx-auto hidden w-[70%] sm:block sm:max-w-[710px]"

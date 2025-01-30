@@ -20,7 +20,7 @@ export default function Heading({
   } else if (variant == "secondary") {
     return (
       <h2 className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-4xl font-bold text-transparent">
-        Today & Tomorrow
+        {children}
       </h2>
     );
   }

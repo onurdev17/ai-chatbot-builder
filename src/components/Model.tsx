@@ -8,6 +8,8 @@ import { IoSendOutline } from "react-icons/io5";
 import MessageBubble from "./ModelBubble";
 import { motion } from "framer-motion";
 import MiniSpinner from "./MiniSpinner";
+import useViewport from "@/lib/hooks/useViewPort";
+import Heading from "./Heading";
 
 type ChatbotCreate = {
   name: string;
@@ -20,6 +22,8 @@ type ChatbotCreate = {
 function Model() {
   const [inputValue, setInputValue] = useState("");
   const [isCreating, setIsCreating] = useState(false);
+
+  const { width } = useViewport();
 
   const { currentQuestion, setCurrentQId } = useQuestion();
   const [config, setConfig] = useState<ChatbotCreate>({
@@ -77,23 +81,42 @@ function Model() {
 
   useEffect(() => {
     setCurrentQId(1);
-    document.documentElement.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.documentElement.style.overflow = "auto";
-      document.body.style.overflow = "auto";
+
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        document.documentElement.style.setProperty("overflow", "hidden", "important");
+        // document.body.style.overflow = "hidden";
+      } else {
+        document.documentElement.style.overflow = "";
+        // document.body.style.overflow = "";
+      }
     };
 
-    // eslint-disable-next-line
-  }, []);
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      document.documentElement.style.overflow = "";
+      // document.body.style.overflow = "";
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [width]);
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="mx-auto w-full max-w-[70rem] px-4 pt-8 sm:px-6 lg:px-8"
+      className="mx-auto w-full max-w-[70rem] px-4 pt-44 sm:px-6 lg:px-8"
     >
+      <div className="hidden sm:flex flex-col justify-center text-center mb-20">
+        <Heading variant="secondary">Start Forging Your AI</Heading>
+        <p className="mt-4 text-lg text-slate-300">
+          Shape Personality, Define Purpose, Launch in Minutes
+        </p>
+      </div>
+
       {/* Desktop View  */}
       <div className="hidden sm:block">
         <div className="relative">
@@ -112,7 +135,7 @@ function Model() {
             <div className="relative overflow-hidden rounded-xl border border-cyan-500/20 bg-gradient-to-br from-slate-900/50 to-black/50 backdrop-blur-2xl">
               <div className="flex flex-col sm:flex-row">
                 {/* Spline Model */}
-                <div className="relative h-[30rem] sm:w-2/3">
+                <div className="relative h-[30rem] sm:h-[50rem] sm:w-2/3">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.05),transparent)]" />
                   <Spline
                     scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"

@@ -37,7 +37,9 @@ export default function RootLayout({
             <div className="absolute left-[10%] top-4 h-12 w-12 -translate-x-1/2 transform sm:left-[12.5%] sm:h-28 sm:w-28 xl:left-[20%]">
               <Logo />
             </div>
-            <main className="max-w-screen flex h-[55%] flex-col sm:min-h-screen">{children}</main>
+            <main className="max-w-screen flex h-[55%] flex-col sm:min-h-screen !overflow-y-auto">
+              {children}
+            </main>
             <Footer />
             <Starfield />
             <Socials />

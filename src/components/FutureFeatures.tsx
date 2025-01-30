@@ -4,6 +4,7 @@ import { GiArtificialIntelligence, GiLightningSpanner, GiMoebiusStar } from "rea
 import { FiCheckCircle, FiCloudLightning, FiUploadCloud } from "react-icons/fi";
 import { BsGear, BsPlugin, BsRobot } from "react-icons/bs";
 import Heading from "./Heading";
+import TypographyMuted from "./MutedText";
 
 const FutureFeatures = () => {
   const currentFeatures = [
@@ -49,7 +50,7 @@ const FutureFeatures = () => {
   ];
 
   return (
-    <section className="relative min-h-[100vh] overflow-hidden pb-5 pt-20">
+    <section className="relative min-h-[100vh] overflow-hidden pb-5">
       {/* Background Elements */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -64,7 +65,9 @@ const FutureFeatures = () => {
           className="mb-20 text-center"
         >
           <Heading variant="secondary">Today & Tomorrow</Heading>
-          <p className="mt-4 text-lg text-slate-300">Redefining AI interaction capabilities</p>
+          <TypographyMuted className="text-md relative leading-8 text-gray-300/90 md:text-lg mt-4">
+            Redefining AI interaction capabilities
+          </TypographyMuted>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">

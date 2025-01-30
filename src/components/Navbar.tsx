@@ -21,7 +21,7 @@ function Navbar() {
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const current = latest;
-    const threshold = 100;
+    const threshold = 30;
     const scrollDirection = current > lastScrollY ? "down" : "up";
 
     if (current > threshold && scrollDirection === "down") {
@@ -50,7 +50,7 @@ function Navbar() {
       variants={navbarVariants}
       animate={isVisible ? "visible" : "hidden"}
       transition={{ type: "spring", stiffness: 300, damping: 25 }}
-      className="fixed left-1/2 top-2 z-50 h-16 !-translate-x-1/2 transform sm:top-4"
+      className="fixed left-1/2 top-2 z-50 h-16 !-translate-x-1/2 transform sm:top-10"
     >
       <motion.nav
         initial={{ scale: 0.95, opacity: 0 }}
