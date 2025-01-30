@@ -21,7 +21,7 @@ const FutureFeatures = () => {
     },
     {
       title: "Instant Deployment",
-      description: "One-click deployment to any platform",
+      description: "One-click deployment",
       icon: <FiUploadCloud className="h-8 w-8" />,
       gradient: "from-purple-500 to-pink-400",
     },
