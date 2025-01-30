@@ -111,10 +111,7 @@ function Model() {
       className="mx-auto w-full max-w-[70rem] px-4 pt-44 sm:px-6 lg:px-8"
     >
       <div className="hidden sm:flex flex-col justify-center text-center mb-20">
-        <Heading variant="secondary">Start Forging Your AI</Heading>
-        <p className="mt-4 text-lg text-slate-300">
-          Shape Personality, Define Purpose, Launch in Minutes
-        </p>
+        <Heading variant="secondary">Start Shaping Your AI</Heading>
       </div>
 
       {/* Desktop View  */}
