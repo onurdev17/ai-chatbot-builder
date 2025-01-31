@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Lock, Mail } from "lucide-react";
 import { useState } from "react";
 import Logo from "./Logo";
+import Heading from "./Heading";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -17,7 +18,10 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="relative flex h-[60vh] items-end justify-center overflow-hidden p-4 sm:min-h-screen sm:items-center">
+    <div className="relative flex items-end flex-col justify-center overflow-hidden px-4 sm:min-h-screen sm:items-center">
+      <div className="hidden sm:flex flex-col justify-center text-center mb-20">
+        <Heading variant="secondary">Sign in to Nimblic</Heading>
+      </div>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
