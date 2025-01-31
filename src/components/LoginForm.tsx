@@ -18,7 +18,7 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="relative flex items-end flex-col justify-center overflow-hidden px-4 sm:min-h-screen sm:items-center">
+    <div className="relative flex pt-44 sm:pt-0 items-end flex-col justify-center overflow-hidden px-4 sm:min-h-screen sm:items-center">
       <div className="hidden sm:flex flex-col justify-center text-center mb-20">
         <Heading variant="secondary">Sign in to Nimblic</Heading>
       </div>
