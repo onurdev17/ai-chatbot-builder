@@ -153,9 +153,11 @@ function Model() {
                             {Object.entries(config).map(
                               ([key, value]) =>
                                 value && (
-                                  <div key={key} className="text-sm text-cyan-100">
+                                  <div key={key} className="text-sm text-cyan-100 max-w-full">
                                     <span className="font-medium capitalize">{key}:</span>
-                                    <span className="ml-2 truncate text-cyan-300">{value}</span>
+                                    <span className="ml-2 truncate text-cyan-300 w-full block">
+                                      {value}
+                                    </span>
                                   </div>
                                 ),
                             )}
