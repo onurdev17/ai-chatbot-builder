@@ -24,7 +24,7 @@ const socialItems = [
 ];
 
 const Socials = () => {
-  const [walletAddress] = useState("Available soon");
+  const [walletAddress] = useState("8Gge4Es5VxoaWGBiG5KkaHWmQGqscG1Vb8yhU7Nupump");
   const [copied, setCopied] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);

@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function Footer() {
   const [copied, setCopied] = useState(false);
-  const walletAddress = "Available soon";
+  const walletAddress = "8Gge4Es5VxoaWGBiG5KkaHWmQGqscG1Vb8yhU7Nupump";
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(walletAddress);

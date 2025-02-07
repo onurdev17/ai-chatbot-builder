@@ -4,7 +4,7 @@ import { Copy } from "lucide-react";
 
 const CopyableIdentifier = () => {
   const [copied, setCopied] = useState(false);
-  const identifier = "CA: Available soon";
+  const identifier = "8Gge4Es5VxoaWGBiG5KkaHWmQGqscG1Vb8yhU7Nupump";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(identifier);
@@ -14,7 +14,7 @@ const CopyableIdentifier = () => {
 
   return (
     <div className="relative flex items-center justify-center">
-      <div className="mr-2 text-xs text-gray-500">{identifier}</div>
+      <div className="mr-2 text-xs text-gray-500 truncate max-w-[180px]">CA: {identifier}</div>
       <button onClick={handleCopy} className="text-gray-400 transition-colors hover:text-gray-200">
         <Copy size={16} />
       </button>
