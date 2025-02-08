@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import db from "@/services/supabase";
 import { nanoid } from "nanoid";
+import { revalidateTag } from "next/cache";
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY as string);
 
@@ -69,10 +70,12 @@ export async function POST(req: Request) {
       }
 
       chatbot = newChatbot;
+
+      revalidateTag("chatbots");
     } else {
       return NextResponse.json(
         { error: "Either chatbotToken or config is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
