@@ -5,10 +5,11 @@ import { FiCode, FiTwitter } from "react-icons/fi";
 import { PiTelegramLogo } from "react-icons/pi";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { useState } from "react";
+import { getWalletCode } from "@/lib/constants";
 
 export default function Footer() {
   const [copied, setCopied] = useState(false);
-  const walletAddress = "DH4VpZ53Vk4TkqU8zQ1JoLiRMrK33UkabsUUGt2Zpump";
+  const walletAddress = getWalletCode();
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(walletAddress);

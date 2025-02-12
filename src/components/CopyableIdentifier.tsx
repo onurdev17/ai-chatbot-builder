@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Copy } from "lucide-react";
+import { getWalletCode } from "@/lib/constants";
 
 const CopyableIdentifier = () => {
   const [copied, setCopied] = useState(false);
-  const identifier = "DH4VpZ53Vk4TkqU8zQ1JoLiRMrK33UkabsUUGt2Zpump";
+  const walletAddress = getWalletCode();
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(identifier);
+    navigator.clipboard.writeText(walletAddress);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
   return (
     <div className="relative flex items-center justify-center">
-      <div className="mr-2 text-xs text-gray-500 truncate max-w-[180px]">CA: {identifier}</div>
+      <div className="mr-2 text-xs text-gray-500 truncate max-w-[180px]">CA: {walletAddress}</div>
       <button onClick={handleCopy} className="text-gray-400 transition-colors hover:text-gray-200">
         <Copy size={16} />
       </button>

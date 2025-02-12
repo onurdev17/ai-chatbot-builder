@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { getWalletCode } from "@/lib/constants";
+import { AnimatePresence, motion } from "framer-motion";
+import { useCallback, useEffect, useState } from "react";
 import { FiTwitter } from "react-icons/fi";
-import { PiTelegramLogo, PiX } from "react-icons/pi";
-import { IoIosMenu } from "react-icons/io";
 import { ImCoinDollar } from "react-icons/im";
-import { motion, AnimatePresence } from "framer-motion";
+import { IoIosMenu } from "react-icons/io";
+import { PiTelegramLogo, PiX } from "react-icons/pi";
 
 // Sabit sosyal ikon verileri
 const socialItems = [
@@ -24,7 +25,8 @@ const socialItems = [
 ];
 
 const Socials = () => {
-  const [walletAddress] = useState("DH4VpZ53Vk4TkqU8zQ1JoLiRMrK33UkabsUUGt2Zpump");
+  const walletAddress = getWalletCode();
+
   const [copied, setCopied] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
