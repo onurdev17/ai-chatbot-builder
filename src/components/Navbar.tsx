@@ -4,10 +4,10 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FiHome, FiMessageSquare, FiUser } from "react-icons/fi";
-import { usePathname } from "next/navigation"; // Yeni eklenen import
+import { usePathname } from "next/navigation";
 
 function Navbar() {
-  const pathname = usePathname(); // Aktif route'u al
+  const pathname = usePathname();
   const [isMobile, setIsMobile] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);

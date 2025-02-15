@@ -42,7 +42,6 @@ function Safari() {
           transformOrigin: "top center",
         }}
       >
-        {/* [Desktop content remains the same] */}
         <div className="absolute inset-0 z-20">
           <div className="absolute -top-1 left-1/2 h-4 w-3/4 -translate-x-1/2 rounded-full bg-gradient-to-r from-cyan-400/20 to-purple-400/20 blur-xl" />
           <div className="absolute inset-0 rounded-[2.5rem] border-2 border-white/10" />
@@ -77,7 +76,7 @@ function Safari() {
         </div>
       </motion.div>
 
-      {/* Mobile Version */}
+      {/* Mobile */}
       <motion.div
         className="relative mx-auto block w-[80%] max-w-[400px] sm:hidden"
         initial={{ opacity: 0, bottom: -200 }}
@@ -89,20 +88,15 @@ function Safari() {
           transformOrigin: "top center",
         }}
       >
-        {/* Mobile Device Frame */}
         <div className="absolute inset-0 z-20">
-          {/* Top Notch */}
           <div className="absolute left-1/2 top-2 h-6 w-1/2 -translate-x-1/2 rounded-b-xl bg-black" />
 
-          {/* Device Borders */}
           <div className="absolute inset-0 rounded-[2.5rem] border-2 border-white/10" />
           <div className="absolute inset-[2px] rounded-[2rem] border-2 border-white/5" />
         </div>
 
-        {/* Holographic Effect */}
         <div className="absolute inset-0 z-10 rounded-3xl bg-[radial-gradient(circle_at_center,rgba(96,165,250,0.1),transparent)]" />
 
-        {/* Content Container */}
         <div className="relative z-0 mx-4 overflow-hidden rounded-[2rem] shadow-2xl">
           <div className="relative pt-[250%]">
             <div className="absolute inset-0">
@@ -117,7 +111,6 @@ function Safari() {
           </div>
         </div>
 
-        {/* Bottom Reflection Effect */}
         <div className="absolute -bottom-24 left-0 right-0 h-24 scale-y-[-1] opacity-40 blur-lg">
           <div className="h-full w-full bg-[linear-gradient(0deg,transparent,rgba(255,255,255,0.3))]" />
         </div>

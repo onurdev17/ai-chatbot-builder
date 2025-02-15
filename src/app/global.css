@@ -40,7 +40,6 @@ body {
   animation: scan 8s linear infinite;
 }
 
-/* Animasyonlar */
 @keyframes float {
   0%,
   100% {
@@ -66,7 +65,6 @@ body {
   }
 }
 
-/* Özel gradient sınır efekti */
 .border-rotate::before {
   content: "";
   position: absolute;

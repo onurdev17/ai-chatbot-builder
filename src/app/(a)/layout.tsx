@@ -1,14 +1,13 @@
+import "@/app/global.css";
 import Starfield from "@/components/Bg";
 import Footer from "@/components/Footer";
 import Logo from "@/components/Logo";
 import Navbar from "@/components/Navbar";
-import Socials from "@/components/Socials";
 import { DialogProvider } from "@/context/DialogContext";
 import { QuestionProvider } from "@/context/QuestionContext";
 import type { Metadata } from "next";
 import { Exo_2 } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
-import "@/app/global.css";
 
 const exo = Exo_2({ subsets: ["latin"] });
 
@@ -42,7 +41,6 @@ export default function RootLayout({
             </main>
             <Footer />
             <Starfield />
-            <Socials />
           </QuestionProvider>
         </DialogProvider>
         <NextTopLoader showSpinner={false} easing="ease" />

@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import CopyableIdentifier from "./CopyableIdentifier";
 import Heading from "./Heading";
 import TypographyMuted from "./MutedText";
 import { Button } from "./ui/button";
@@ -55,9 +54,6 @@ export default function Hero() {
               {/* <div className="absolute inset-0 -left-full h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all group-hover:left-full" /> */}
             </Link>
           </Button>
-          <div className="mx-auto mt-4 text-center">
-            <CopyableIdentifier />
-          </div>
         </motion.div>
 
         {/* Animated dots pattern */}

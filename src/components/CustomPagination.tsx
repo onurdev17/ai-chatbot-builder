@@ -1,4 +1,3 @@
-// components/CustomPagination.tsx
 "use client";
 
 import {
@@ -22,7 +21,6 @@ export default function CustomPagination({
   const searchParams = useSearchParams();
 
   const createPageURL = (pageNumber: number) => {
-    // Parametreyi number olarak belirle
     const params = new URLSearchParams(searchParams);
     params.set("page", pageNumber.toString());
     return `${pathname}?${params.toString()}`;

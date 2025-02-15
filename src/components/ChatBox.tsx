@@ -1,23 +1,18 @@
 "use client";
 
+import CodeDisplayBlock from "@/components/code-display-block";
 import { Button } from "@/components/ui/button";
-import {
-  ChatBubble,
-  ChatBubbleAvatar,
-  ChatBubbleMessage,
-  ChatBubbleAction,
-} from "@/components/ui/chat/chat-bubble";
+import { ChatBubble, ChatBubbleAvatar, ChatBubbleMessage } from "@/components/ui/chat/chat-bubble";
 import { ChatInput } from "@/components/ui/chat/chat-input";
 import { ChatMessageList } from "@/components/ui/chat/chat-message-list";
-import { Mic, CornerDownLeft, CopyIcon, RefreshCcw, Volume2, Trash2 } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
-import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import CodeDisplayBlock from "@/components/code-display-block";
 import type { Chatbot, Message } from "@/lib/types";
 import { clearLocalStorage, getFromLocalStorage, saveToLocalStorage } from "@/lib/utils";
-import { Skeleton } from "./ui/skeleton";
+import { CornerDownLeft, Trash2 } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { Skeleton } from "./ui/skeleton";
 
 // const ChatAiIcons = [
 //   {
@@ -215,8 +210,8 @@ export default function ChatBox({ token }: { token: string }) {
       return (
         <ChatBubbleAvatar
           src=""
-          fallback="⏳" // Using an hourglass emoji as loading indicator
-          className="bg-gradient-to-br from-purple-500/50 to-blue-600/50" // Reduced opacity to indicate loading
+          fallback="⏳"
+          className="bg-gradient-to-br from-purple-500/50 to-blue-600/50"
         />
       );
     }
@@ -242,7 +237,6 @@ export default function ChatBox({ token }: { token: string }) {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // hide scroll
   useEffect(() => {
     const handleMobileView = () => {
       if (window.innerWidth < 640) {
@@ -254,13 +248,10 @@ export default function ChatBox({ token }: { token: string }) {
       }
     };
 
-    // Run on mount
     handleMobileView();
 
-    // Run on resize
     window.addEventListener("resize", handleMobileView);
 
-    // Cleanup
     return () => {
       window.removeEventListener("resize", handleMobileView);
       document.body.style.overflow = "";
@@ -403,7 +394,7 @@ export default function ChatBox({ token }: { token: string }) {
     </div>
   ) : (
     <div className="relative mx-auto flex h-full w-full max-w-3xl flex-col items-center overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 opacity-85">
-      {/* Dekoratif Arka Plan */}
+      {/* Bg */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)]" />
       <div className="absolute left-0 right-0 top-0 h-20 bg-gradient-to-b from-blue-500/10 to-transparent" />
 
