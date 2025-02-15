@@ -30,7 +30,7 @@ function Safari() {
         </TypographyMuted>
       </motion.div>
 
-      {/* Desktop Version */}
+      {/* Desktop */}
       <motion.div
         className="relative mx-auto hidden w-[70%] sm:block sm:max-w-[710px]"
         initial={{ opacity: 0, bottom: -200 }}

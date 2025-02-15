@@ -38,7 +38,6 @@ export default function LoginForm() {
           </motion.div>
         )}
 
-        {/* Logo'yu mobile'da gizle */}
         <div className="mb-12 hidden flex-col items-center max-sm:mb-8 sm:flex">
           <div className="relative mb-4 h-24 w-24">
             <Logo />
@@ -46,7 +45,6 @@ export default function LoginForm() {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Email Input */}
           <div className="group relative">
             <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-cyan-500/30 to-purple-500/30 opacity-0 transition-opacity duration-300 group-focus-within:opacity-100" />
             <div className="relative flex items-center rounded-xl border border-cyan-500/30 bg-slate-900/50 backdrop-blur-lg">
@@ -64,7 +62,6 @@ export default function LoginForm() {
             </div>
           </div>
 
-          {/* Password Input */}
           <div className="group relative">
             <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-cyan-500/30 to-purple-500/30 opacity-0 transition-opacity duration-300 group-focus-within:opacity-100" />
             <div className="relative flex items-center rounded-xl border border-cyan-500/30 bg-slate-900/50 backdrop-blur-lg">
@@ -82,7 +79,6 @@ export default function LoginForm() {
             </div>
           </div>
 
-          {/* Submit Button */}
           <motion.button
             type="submit"
             className="w-full rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 px-6 py-3 font-semibold text-white shadow-lg shadow-cyan-500/30 transition-all hover:shadow-purple-500/40"

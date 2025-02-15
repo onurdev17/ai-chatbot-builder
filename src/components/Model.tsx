@@ -131,7 +131,6 @@ function Model() {
           <div className="relative rounded-2xl bg-gradient-to-br from-slate-900/90 to-black/90 shadow-2xl shadow-cyan-500/20">
             <div className="relative overflow-hidden rounded-xl border border-cyan-500/20 bg-gradient-to-br from-slate-900/50 to-black/50 backdrop-blur-2xl">
               <div className="flex flex-col sm:flex-row">
-                {/* Spline Model */}
                 <div className="relative h-[30rem] sm:h-[50rem] sm:w-2/3">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.05),transparent)]" />
                   <Spline
@@ -140,7 +139,6 @@ function Model() {
                   />
                 </div>
 
-                {/* Input Area */}
                 <div className="w-full border-t border-cyan-500/20 p-4 sm:w-1/3 sm:border-l sm:border-t-0">
                   <div className="relative flex h-full flex-col">
                     <div className="flex min-w-full flex-1">
@@ -194,9 +192,8 @@ function Model() {
         </div>
       </div>
 
-      {/* Mobile View */}
+      {/* Mobile */}
       <div className="sm:hidden">
-        {/* Arkaplan Robot */}
         <div className="fixed inset-0 z-0">
           <Spline
             scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
@@ -216,7 +213,6 @@ function Model() {
           }
         />
 
-        {/* Konfigürasyon Listesi */}
         <div className="fixed inset-x-0 top-24 z-20 mx-4 max-h-[60vh] overflow-y-auto rounded-xl bg-slate-800/90 p-4 backdrop-blur-xl">
           <h3 className="mb-4 text-lg font-semibold text-cyan-300">Configuration</h3>
           <div className="space-y-3">
@@ -232,7 +228,6 @@ function Model() {
           </div>
         </div>
 
-        {/* Mobile Input */}
         <div className="fixed bottom-0 left-0 z-30 w-full border-t border-cyan-500/20 bg-slate-900/95 backdrop-blur-xl">
           <div className="p-3">
             <div className="relative flex items-center rounded-lg bg-slate-800/80">
