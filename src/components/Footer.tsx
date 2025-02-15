@@ -2,7 +2,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { FiCode, FiTwitter } from "react-icons/fi";
-import { PiTelegramLogo } from "react-icons/pi";
 
 export default function Footer() {
   // const [copied, setCopied] = useState(false);
